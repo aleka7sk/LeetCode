@@ -16,14 +16,14 @@ func reverse(x int) int {
 		result = result*10 + arr[i]
 	}
 
-	if result*sign < powNumber(2, 31)-1 && result*sign > powNumber(-2, 31) {
+	if result*sign < PowNumber(2, 31)-1 && result*sign > PowNumber(-2, 31) {
 		return result * sign
 	} else {
 		return 0
 	}
 }
 
-func powNumber(num, pow int) int {
+func PowNumber(num, pow int) int {
 	multiply := 1
 	for i := 0; i < pow; i++ {
 		multiply = multiply * num
