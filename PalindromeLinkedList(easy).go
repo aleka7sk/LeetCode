@@ -8,6 +8,11 @@ package leetcode
  * }
  */
 
+type ListNode struct {
+	Val  int
+	Next *ListNode
+}
+
 func IsPalindrome(head *ListNode) bool {
 	arr := []int{}
 	for head != nil {
