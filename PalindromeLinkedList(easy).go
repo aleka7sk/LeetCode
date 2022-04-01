@@ -8,12 +8,7 @@ package leetcode
  * }
  */
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
-
-func isPalindrome(head *ListNode) bool {
+func IsPalindrome(head *ListNode) bool {
 	arr := []int{}
 	for head != nil {
 		arr = append(arr, head.Val)
