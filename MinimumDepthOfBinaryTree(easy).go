@@ -23,14 +23,24 @@ func minDepth(root *TreeNode) int {
 	x := minDepth(root.Left)
 	y := minDepth(root.Right)
 
-	if x != 0 && y == 0 {
-		return 1 + x
-	} else if x == 0 && y != 0 {
-		return 1 + y
+	if x == 0 || y == 0 {
+		return max(x, y) + 1
 	}
-	if x > y {
-		return 1 + y
+	return min(x, y) + 1
+}
+
+func max(first, second int) int {
+	if first > second {
+		return first
 	} else {
-		return 1 + x
+		return second
+	}
+}
+
+func min(first, second int) int {
+	if first > second {
+		return second
+	} else {
+		return first
 	}
 }
