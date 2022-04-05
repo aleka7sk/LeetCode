@@ -10,7 +10,7 @@ func evalRPN(tokens []string) int {
 			count := 2
 			arr := []string{}
 			for j := i - 1; count != 0; j-- {
-				if !isOperator(tokens[j]) && tokens[j] != " " {
+				if tokens[j] != " " {
 					arr = append(arr, tokens[j])
 					tokens[j] = " "
 					count--
