@@ -1,9 +1,7 @@
 package leetcode
 
 func merge(nums1 []int, m int, nums2 []int, n int) {
-	for index, elem := range nums2 {
-		nums1[m+index] = elem
-	}
+	nums1 = append(nums1[0:m], nums2...)
 	BubbleSort(nums1)
 }
 
