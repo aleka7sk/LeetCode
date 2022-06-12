@@ -15,3 +15,33 @@ func IsMatch(s string, p string) bool {
 		return false
 	}
 }
+
+
+#define LED_PIN 9
+String message;
+ 
+void setup()
+{
+  pinMode(LED_PIN, OUTPUT);
+  Serial.begin(9600);
+}
+ 
+void loop()
+{
+  while (Serial.available())
+  {  
+  char incomingChar = Serial.read();
+    message+=incomingChar;
+  }
+  if(message=="on")
+  {
+   digitalWrite(LED_PIN, HIGH);
+  }
+  else if (message=="off")
+  {
+   digitalWrite(LED_PIN, LOW);
+  }
+  message = "";
+  delay(1000);
+
+}
