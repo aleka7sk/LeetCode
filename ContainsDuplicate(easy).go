@@ -1,12 +1,12 @@
 package leetcode
 
 func containsDuplicate(nums []int) bool {
-	for i := 0; i < len(nums)-1; i++ {
-		for j := i + 1; j < len(nums); j++ {
-			if nums[i] == nums[j] {
-				return true
-			}
+	dict := make(map[int]bool)
+	for _, num := range nums {
+		if _, ok := dict[num]; ok {
+			return true
 		}
+		dict[num] = true
 	}
 	return false
 }
